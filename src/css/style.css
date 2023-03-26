@@ -27,3 +27,26 @@ body {
     line-height: 2;
     color: white;
 }
+
+.task-title {
+    text-align: center;
+    font-size: 36px;
+    font-weight: 700;
+    line-height: 2;
+    color: black;
+}
+
+.task {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.icon {
+    margin: 5px;
+    cursor: pointer;
+    transition: 0.5s;
+}
+
+.icon:hover{
+    transform: scale(1.5);
+}
