@@ -2,6 +2,7 @@ import React from 'react';
 import * as ReactDOMClient from 'react-dom/client';
 import ReactDOM from 'react-dom';
 import Tasks from './compotents/Tasks';
+import AddTask from './compotents/AddTask';
 
 class App extends React.Component 
 {
@@ -22,7 +23,7 @@ class App extends React.Component
         }
       ]
     }
-    // this.addTask = this.addTask.bind(this)
+    this.addTask = this.addTask.bind(this)
   } 
 
   render()
@@ -30,8 +31,17 @@ class App extends React.Component
     return (
       <div className='container'>
         <Tasks tasks={this.state.tasks}/>
+        <div>
+          <AddTask taskAdd={this.addTask}/>
+        </div>
       </div>
     )
+  }
+
+  addTask(task) 
+  {
+    const id = this.state.tasks.length + 1;
+    this.setState({tasks: [...this.state.tasks, {id, ...task}]})
   }
 }
 
