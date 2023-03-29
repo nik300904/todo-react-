@@ -14,12 +14,14 @@ class App extends React.Component
         {
           id: 1,
           title: 'Помыть посуду',
-          description: 'Помыть посуду нужно до 21 00'
+          description: 'Помыть посуду нужно до 21 00',
+          status: false
         },
         {
           id: 2,
           title: 'Сходить в магазин',
-          description: 'Купить овощи, мясо и хлеб'
+          description: 'Купить овощи, мясо и хлеб',
+          status: false
         }
       ]
     }
@@ -32,7 +34,7 @@ class App extends React.Component
   {
     return (
       <div className='container'>
-        <Tasks taskEdit={this.editTask} tasks={this.state.tasks} taskDelete={this.deleteTask}/>
+        <Tasks onDone={this.doneTask} taskEdit={this.editTask} tasks={this.state.tasks} taskDelete={this.deleteTask}/>
         <div>
           <AddTask taskAdd={this.addTask}/>
         </div>
@@ -58,6 +60,7 @@ class App extends React.Component
     let allTasks = this.state.tasks;
     allTasks[task.id - 1] = task;
     this.setState({tasks: []}, () => {this.setState({tasks: [...allTasks]})})
+    console.log(task)
   }
 }
 

@@ -57,3 +57,7 @@ body {
     flex-direction: column;
     margin: 0 auto;
 }
+
+.done {
+    text-decoration: solid line-through 2px;
+}

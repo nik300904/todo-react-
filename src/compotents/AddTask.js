@@ -25,7 +25,8 @@ class AddTask extends React.Component
                 this.form.reset();
                 this.taskInfo = {
                   title: this.state.title,
-                  description: this.state.description
+                  description: this.state.description,
+                  status: false
                 }
                 if (this.props.task) {
                     if (!this.taskInfo.title) {
