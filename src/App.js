@@ -34,7 +34,7 @@ class App extends React.Component
       <div className='container'>
         <Tasks taskEdit={this.editTask} tasks={this.state.tasks} taskDelete={this.deleteTask}/>
         <div>
-          <AddTask tasks={this.state.tasks} taskAdd={this.addTask}/>
+          <AddTask taskAdd={this.addTask}/>
         </div>
       </div>
     )
