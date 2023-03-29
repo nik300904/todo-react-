@@ -10,7 +10,7 @@ class Tasks extends React.Component
     if (this.props.tasks.length > 0) {
         return (
             <div>
-                {this.props.tasks.map((el) => <Task task={el}/>)}
+                {this.props.tasks.map((el) => <Task taskEdit={this.props.taskEdit} taskDelete={this.props.taskDelete} key={el.id} task={el}/>)}
             </div>
         ) 
     } else {

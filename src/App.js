@@ -24,15 +24,17 @@ class App extends React.Component
       ]
     }
     this.addTask = this.addTask.bind(this)
+    this.deleteTask = this.deleteTask.bind(this)
+    this.editTask = this.editTask.bind(this)
   } 
 
   render()
   {
     return (
       <div className='container'>
-        <Tasks tasks={this.state.tasks}/>
+        <Tasks taskEdit={this.editTask} tasks={this.state.tasks} taskDelete={this.deleteTask}/>
         <div>
-          <AddTask taskAdd={this.addTask}/>
+          <AddTask tasks={this.state.tasks} taskAdd={this.addTask}/>
         </div>
       </div>
     )
@@ -42,6 +44,20 @@ class App extends React.Component
   {
     const id = this.state.tasks.length + 1;
     this.setState({tasks: [...this.state.tasks, {id, ...task}]})
+  }
+
+  deleteTask(id)
+  {
+    this.setState({
+      tasks: this.state.tasks.filter((el) => el.id !== id)
+    })
+  }
+
+  editTask(task)
+  {
+    let allTasks = this.state.tasks;
+    allTasks[task.id - 1] = task;
+    this.setState({tasks: []}, () => {this.setState({tasks: [...allTasks]})})
   }
 }
 

@@ -28,10 +28,15 @@ class AddTask extends React.Component
                   description: this.state.description
                 }
                 if (this.props.task) {
+                    if (!this.taskInfo.title) {
+                      this.taskInfo.title = this.props.task.title;
+                    }
+                    if (!this.taskInfo.description) {
+                      this.taskInfo.description = this.props.task.description;
+                    }
                     this.taskInfo.id = this.props.task.id
                 }
                 this.props.taskAdd(this.taskInfo);
-                console.log(this.taskInfo)
             }}
             >Добавить задачу</button>
         </form>
