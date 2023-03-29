@@ -1,0 +1,63 @@
+@import url('https://fonts.googleapis.com/css2?family=Rubik:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Rubik', sans-serif;
+}
+
+.container {
+    max-width: 1470px;
+    margin: 0 auto;
+}
+
+.header__container {
+    width: 100%;
+    background: #2E3784;
+}
+
+.title-text {
+    text-align: center;
+    font-size: 48px;
+    font-weight: 700;
+    line-height: 2;
+    color: white;
+}
+
+.task-title {
+    text-align: center;
+    font-size: 36px;
+    font-weight: 700;
+    line-height: 2;
+    color: black;
+}
+
+.task {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.icon {
+    margin: 5px;
+    cursor: pointer;
+    transition: 0.5s;
+}
+
+.icon:hover{
+    transform: scale(1.5);
+}
+
+.addTask {
+    width: 25%;
+    display: flex;
+    flex-direction: column;
+    margin: 0 auto;
+}
+
+.done {
+    text-decoration: solid line-through 2px;
+}
